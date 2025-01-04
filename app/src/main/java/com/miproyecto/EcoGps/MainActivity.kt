@@ -1,6 +1,8 @@
 package com.miproyecto.EcoGps
 
+import android.app.Application
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -16,16 +18,56 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.miproyecto.EcoGps.ui.theme.EcoGpsTheme
 
+class EcoGpsApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        Log.d("EcoGpsApplication", "Aplicación Iniciada.")
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        Log.w("EcoGpsApplication", "Poca memoria disponible.")
+    }
+}
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("MainActivity", "onCreate llamado: La actividad se está creando.")
         setContent {
             EcoGpsTheme {
                 MainScreen()
             }
         }
     }
+    override fun onStart() {
+        super.onStart()
+        Log.d("MainActivity", "onStart llamado: La actividad está siendo visible.")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("MainAcitivty", "onResume llamado: La actividad está interactuando con el usuario.")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("MainActivty", "onPause LLAMADO: La actividad ya no esta interactuando con el usuario.")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("MainActivity", "onStop llamado: La actividad ya no es visible.")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("MainActivity", "onDestroy llamado: La actividad se está destruyendo")
+    }
+
 }
+
+
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
