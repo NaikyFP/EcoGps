@@ -14,3 +14,13 @@ Añadir las dependencias necesarias rom
 Configuracion del AndroidManifest.xml modificando el nombre de la app
 Declarar los permisos de acceso a internet de lectura y escritura de almacenamiento
 La orientación de la pantalla de manera "portrait" (vertical) de manera fija.
+
+Tarea 3
+
+-Los cambios realizados son crear la base de datos creando una función abstracta con el dao
+
+-Inicializar la base de datos en EcoGpsApplication
+
+-Creamos el ViewModel y lo ponemos como el MainScreen
+
+-Conectamos el ViewModel con el MainActivity
