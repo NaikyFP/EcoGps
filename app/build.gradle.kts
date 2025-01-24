@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.viewmodel.compose) // Para usar viewModel con Jetpack Compose
+    implementation(libs.androidx.lifecycle.runtime.ktx.v261)      // Para corrutinas en ViewModel
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
